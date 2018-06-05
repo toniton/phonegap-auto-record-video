@@ -19,10 +19,11 @@ limitations under the License.
 import java.io.File;
 import java.io.IOException;
 
-import com.example.custom_camera.R;
+// import com.example.custom_camera.R;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.Resources; 
 import android.hardware.Camera;
 import android.media.CamcorderProfile;
 import android.media.MediaRecorder;
@@ -67,17 +68,23 @@ public class VideoCapture extends Activity implements SurfaceHolder.Callback {
 
 		camcorderProfile = CamcorderProfile.get(CamcorderProfile.QUALITY_LOW);
 
-		setContentView(R.layout.auto_record_video_layout);
+		Resources resources = getApplication().getResources(); 
+		// ;
+		// getActivity().findViewById(
+		// getActivity().getResources().getIdentifier(
+		// getActivity().getPackageName()
+		// setContentView(R.layout.auto_record_video_layout);
+		setContentView(resources.getIdentifier("auto_record_video_layout", "layout", getActivity().getPackageName())));
 
-		SurfaceView cameraView = (SurfaceView) findViewById(R.id.CameraView);
+		SurfaceView cameraView = (SurfaceView) findViewById(getResource("CameraView", "id"));
 		holder = cameraView.getHolder();
 		holder.addCallback(this);
 		holder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
 
 		duration = getIntent().getIntExtra(INTENT_DURATION, duration);
 		
-		currentTime = (TextView) findViewById(R.id.currenttime);
-		durationTime = (TextView) findViewById(R.id.duration);
+		currentTime = (TextView) findViewById(getResource("currenttime", "id"));
+		durationTime = (TextView) findViewById(getResource("duration", "id"));
 		
 		currentTime.setText(String.valueOf(current));
 		durationTime.setText(String.valueOf(duration)+" seconds");
