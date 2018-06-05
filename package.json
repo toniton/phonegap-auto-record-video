@@ -1,0 +1,19 @@
+{
+  "name": "phonegap-auto-record-video",
+  "version": "1.0.0",
+  "description": "## PhoneGap Auto Record Video plugin for Android",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/toniton/phonegap-auto-record-video.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/toniton/phonegap-auto-record-video/issues"
+  },
+  "homepage": "https://github.com/toniton/phonegap-auto-record-video#readme"
+}
