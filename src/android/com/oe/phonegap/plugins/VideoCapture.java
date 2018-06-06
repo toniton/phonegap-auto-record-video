@@ -75,18 +75,18 @@ public class VideoCapture extends Activity implements SurfaceHolder.Callback {
 		// getActivity().getPackageName()
 		// setContentView(R.layout.auto_record_video_layout);
 		setContentView(
-			resources.getIdentifier("auto_record_video_layout", "layout", getActivity().getPackageName())
+			resources.getIdentifier("auto_record_video_layout", "layout", cordova.getActivity().getPackageName())
 		);
 
-		SurfaceView cameraView = (SurfaceView) findViewById(getResource("CameraView", "id"));
+		SurfaceView cameraView = (SurfaceView) findViewById(cordova.getResource("CameraView", "id"));
 		holder = cameraView.getHolder();
 		holder.addCallback(this);
 		holder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
 
 		duration = getIntent().getIntExtra(INTENT_DURATION, duration);
 		
-		currentTime = (TextView) findViewById(getResource("currenttime", "id"));
-		durationTime = (TextView) findViewById(getResource("duration", "id"));
+		currentTime = (TextView) findViewById(cordova.getResource("currenttime", "id"));
+		durationTime = (TextView) findViewById(cordova.getResource("duration", "id"));
 		
 		currentTime.setText(String.valueOf(current));
 		durationTime.setText(String.valueOf(duration)+" seconds");
