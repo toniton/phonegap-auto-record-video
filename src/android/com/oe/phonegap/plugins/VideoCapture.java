@@ -72,7 +72,7 @@ public class VideoCapture extends Activity implements SurfaceHolder.Callback {
 		// getActivity().getResources().getIdentifier(
 		// getActivity().getPackageName()
 		// setContentView(R.layout.auto_record_video_layout);
-		setContentView(resources.getIdentifier("auto_record_video_layout", "layout", getActivity().getPackageName()));
+		setContentView(resources.getIdentifier("auto_record_video_layout", "layout", getApplication().getPackageName()));
 
 		SurfaceView cameraView = (SurfaceView) findViewById(
 				resources.getIdentifier("CameraView", "id", getApplication().getPackageName()));
