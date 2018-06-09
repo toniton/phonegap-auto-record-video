@@ -220,7 +220,11 @@ public class VideoCapture extends Activity implements SurfaceHolder.Callback {
 		OELog.d("surfaceCreated");
 
 		if (usecamera) {
-			camera = Camera.open();
+			if (Camera.getNumberOfCameras() >= 2) {
+				camera = Camera.open(1);             
+			} else {
+				camera = Camera.open();
+			}
 
 			try {
 				camera.setDisplayOrientation(90);
