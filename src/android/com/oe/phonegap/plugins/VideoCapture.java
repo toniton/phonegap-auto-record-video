@@ -64,7 +64,7 @@ public class VideoCapture extends Activity implements SurfaceHolder.Callback {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-		camcorderProfile = CamcorderProfile.get(CamcorderProfile.QUALITY_LOW);
+		camcorderProfile = CamcorderProfile.get(CamcorderProfile.QUALITY_HIGH);
 
 		Resources resources = getApplication().getResources();
 		
